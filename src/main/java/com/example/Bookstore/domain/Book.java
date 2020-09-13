@@ -1,5 +1,7 @@
-package com.example.Bookstore.model;
+package com.example.Bookstore.domain;
 
+
+@Entity
 public class Book {
 	private String title;
 	private String author;
