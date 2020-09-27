@@ -6,11 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import fi.haagahelia.bookStore.domain.Book;
 import fi.haagahelia.bookStore.domain.BookRepository;
 import fi.haagahelia.bookStore.domain.CategoryRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -29,6 +31,18 @@ public class BookController {
         model.addAttribute("books", repository.findAll());
         
         return "booklist";
+    }
+    
+    //RESTful service to get all the books:
+    @RequestMapping(value="/books", method = RequestMethod.GET)
+    public @ResponseBody List<Book> bookListRest(){
+    	return (List<Book>) repository.findAll();
+    }
+    
+    // RESTful service For searching book by Id
+    @RequestMapping(value="/books/{id}", method = RequestMethod.GET)
+    public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long id){
+    	return repository.findById(id);
     }
     
     // add new book
