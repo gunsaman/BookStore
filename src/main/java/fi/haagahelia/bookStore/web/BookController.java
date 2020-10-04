@@ -38,16 +38,20 @@ public class BookController {
     	model.addAttribute("categories", crepository.findAll());
         return "addbook";
     }  
+    //save book
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Book book){
         repository.save(book);
         return "redirect:booklist";
     }  
+    
+    //delete book
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable("id") Long bookId, Model model) {
     	repository.deleteById(bookId);
         return "redirect:../booklist";
     }    
+    //modify book
     @RequestMapping(value = "/modify/{id}", method = RequestMethod.GET)
     public String modifyBook(@PathVariable("id") Long bookId, Model model) {
     	Optional<Book> book = repository.findById(bookId);

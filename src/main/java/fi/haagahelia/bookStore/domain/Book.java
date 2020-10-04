@@ -12,22 +12,21 @@ import javax.persistence.ManyToOne;
 public class Book {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private String title;
 	private String author;
 	private int year;
 	private String isbn;
 	private int price;
+	
 	@ManyToOne
 	@JoinColumn(name ="categoryid")
-	private Category category;
-	
+	private Category category;	
 	
 	public Book() {
 		
 	}
 		
-
 	public Book(String title, String author, int year, String isbn, int price, Category category) {
 		super();
 		this.title = title;
@@ -38,12 +37,12 @@ public class Book {
 		this.category = category;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
