@@ -26,13 +26,13 @@ public class BookStoreApplication {
 	public CommandLineRunner Book(BookRepository brepository, CategoryRepository repository2) {
 		return (args) -> {
 			
-			log.info("categories  of books");
+			log.info("save categories  of books");
 			repository2.save(new Category("Classics"));
 			repository2.save(new Category("Science fiction"));
 			repository2.save(new Category("History"));
 			
-			brepository.save(new Book("aa","john", 2020,"12457812", 29, repository2.findByName("Classics").get(0)));
-			brepository.save(new Book("zz","aman", 2020,"12457812", 29, repository2.findByName("Science fiction").get(0)));
+			brepository.save(new Book("hills","john", 2020,"ISBN1", 29, repository2.findByName("Classics").get(0)));
+			brepository.save(new Book("rivers","aman", 2020,"ISBN3", 15, repository2.findByName("Science fiction").get(0)));
 			
 				
 			
