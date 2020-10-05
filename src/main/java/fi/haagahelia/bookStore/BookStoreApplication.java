@@ -28,12 +28,7 @@ public class BookStoreApplication {
 		SpringApplication.run(BookStoreApplication.class, args);
 	}
 	
-	@Autowired private UserDetailServiceImpl userDetailsService;
-	@Autowired public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.userDetailsService(userDetailsService)
-			.passwordEncoder(new BCryptPasswordEncoder(10));}
-
+	
 	@Bean
 	public CommandLineRunner Book(BookRepository brepository, CategoryRepository repository2, UserRepository urepository) {
 		return (args) -> {

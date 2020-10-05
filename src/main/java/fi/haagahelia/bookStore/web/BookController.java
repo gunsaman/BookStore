@@ -31,6 +31,11 @@ public class BookController {
 	public String login() {
 		return "login";
 	}   
+	@RequestMapping(value="/login")
+    public String loginPage() {	
+        return "login";
+    }
+	
 	
 		
     @RequestMapping(value="/booklist")

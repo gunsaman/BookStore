@@ -26,9 +26,7 @@ public class User {
 	 @Column(name = "role", nullable = false)
 	 private String role;
 
-	public User() {
-		super();
-	}
+	public User() {	}
 
 	public User( String username, String passwordHash, String email, String role) {
 		super();
