@@ -21,29 +21,14 @@
 				th:field="*{isbn}" />
 
 			<div style="clear: both; display: block; height: 10px;"></div>
-<<<<<<< HEAD
-		  	<label for="year">Year</label>
-			<input type="text" th:field="*{year}" />			
+
 			<div style="clear: both; display: block; height: 10px;"></div>						
 		  	<label for="catlist">Category</label>
 			 <select id="catlist" th:field="*{category}" class="form-control">
        			<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
     		</select>
-			
-=======
 			<label for="price">Price</label>
-			<input type="text" id="price" th:field="*{price}" />
-				
-				 <div style="clear: both; display: block; height: 10px;"></div>
-				 <label for="catlist">Category</label> 
-				 <select
-				id="catlist" th:field="*{category}" class="form-control">
-				<option th:each="category: ${categories}"
-					th:value="${category.categoryid}" th:text="${category.name}"></option>
-			</select>
-
-
->>>>>>> 7999b6d6e15348618aaeddb1cd754bc9c423723e
+			<input type="text" id="price" th:field="*{price}" />				
 			<div style="clear: both; display: block; height: 10px;"></div>
 			<input type="submit" value="Save"></input>
 		</form>

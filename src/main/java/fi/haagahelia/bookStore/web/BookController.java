@@ -28,7 +28,7 @@ public class BookController {
 
 	
 
-	@RequestMapping(value="/login") /// WHY IS THIS NOT DIRECTING TO login.html ----> correct this issue
+	@RequestMapping(value="/") /// It's working but if i use (value="/login") WHY IS THIS NOT DIRECTING TO login.html ----> correct this issue
 	public String login() {
 		return "login";
 	}   

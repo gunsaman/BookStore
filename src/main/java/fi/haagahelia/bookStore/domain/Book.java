@@ -15,44 +15,29 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 public class Book {
 	@Id
-<<<<<<< HEAD
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-=======
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
->>>>>>> 7999b6d6e15348618aaeddb1cd754bc9c423723e
+
+	
 	private String title;
 	private String author;
 	private int year;
 	private String isbn;
-<<<<<<< HEAD
-	private int price;
+
+	private double price;
 	
 	@ManyToOne
 	@JoinColumn(name ="categoryid")
 	private Category category;	
-=======
-	private double price;
+
 	
->>>>>>> 7999b6d6e15348618aaeddb1cd754bc9c423723e
-	
-	@ManyToOne
-	@JoinColumn(name="categoryid")
-	@JsonIgnore
-	private Category category;
 	public Book() {
 		
 	}
-<<<<<<< HEAD
+
 		
-	public Book(String title, String author, int year, String isbn, int price, Category category) {
-=======
-
-	
-
 	public Book(String title, String author, int year, String isbn, double price, Category category) {
->>>>>>> 7999b6d6e15348618aaeddb1cd754bc9c423723e
+
 		super();
 		
 		this.title = title;
@@ -63,22 +48,13 @@ public class Book {
 		this.category = category;
 	}
 
-<<<<<<< HEAD
+
 	public Long getId() {
 		return id;
 	}
-
-
-	public void setId(Long id) {
-=======
-
-
-	public long getId() {
-		return id;
-	}
-
+	
 	public void setId(long id) {
->>>>>>> 7999b6d6e15348618aaeddb1cd754bc9c423723e
+
 		this.id = id;
 	}
 
